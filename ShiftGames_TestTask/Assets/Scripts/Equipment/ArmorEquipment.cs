@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = ("NewEquipment/TorsoEquipment"),fileName = ("NewTorsoEquipment"))]
-public class TorsoEquipment : Equipment
+public class ArmorEquipment : Equipment
 {
+    [Header("Meshes")]
     [PreviewField()]
     [SerializeField]
     Mesh torsoPlace;
@@ -20,15 +21,15 @@ public class TorsoEquipment : Equipment
 
     [PreviewField()]
     [SerializeField]
-    Mesh handRightPlace;
-
-    [PreviewField()]
-    [SerializeField]
     Mesh upperArmLeftPlace;
 
     [PreviewField()]
     [SerializeField]
     Mesh lowerArmLeftPlace;
+
+    [PreviewField()]
+    [SerializeField]
+    Mesh handRightPlace;
 
     [PreviewField()]
     [SerializeField]
@@ -40,11 +41,10 @@ public class TorsoEquipment : Equipment
 
     public Mesh LowerArmRightPlace => lowerArmRightPlace;
 
+    public Mesh UpperArmLeftPlace => upperArmLeftPlace;
+
+    public Mesh LowerArmLeftPlace => lowerArmLeftPlace;
+
     public Mesh HandRightPlace => handRightPlace;
-
-    public Mesh UpperArmLeftPlace => UpperArmLeftPlace;
-
-    public Mesh LowerArmLeftPlace => LowerArmLeftPlace;
-
     public Mesh HandLeftPlace => handLeftPlace;
 }

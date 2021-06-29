@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: Iron Armor
   m_EditorClassIdentifier: 
   equipmentName: Iron  Armor
-  equipmentType: 1
   armor: 10
   strenght: 0
   agility: -5
   maxSpeed: -5
   convenience: 3
   torsoPlace: {fileID: 4300482, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  upperArmRightPlace: {fileID: 0}
-  lowerArmRightPlace: {fileID: 0}
-  handRightPlace: {fileID: 0}
-  upperArmLeftPlace: {fileID: 0}
-  lowerArmLeftPlace: {fileID: 0}
-  handLeftPlace: {fileID: 0}
+  upperArmRightPlace: {fileID: 4300530, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  lowerArmRightPlace: {fileID: 4300610, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  upperArmLeftPlace: {fileID: 4300570, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  lowerArmLeftPlace: {fileID: 4300646, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  handRightPlace: {fileID: 4300682, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  handLeftPlace: {fileID: 4300718, guid: 038320a534bd8b444b43734860d1a211, type: 3}

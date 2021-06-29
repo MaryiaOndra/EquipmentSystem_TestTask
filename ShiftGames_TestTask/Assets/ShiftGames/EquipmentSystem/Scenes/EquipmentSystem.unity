@@ -939,6 +939,17 @@ SkinnedMeshRenderer:
     m_Center: {x: -46.011456, y: -0.11255598, z: 1.0197649}
     m_Extent: {x: 15.173786, y: 6.252303, z: 7.4619617}
   m_DirtyAABB: 0
+--- !u!114 &343446202 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7758670095570618289, guid: 80c86e78e30c6004d8212039bbec3aea, type: 3}
+  m_PrefabInstance: {fileID: 989885916}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0b652f32a2cc243917e4028fa0f046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &349364624 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3948609427295165612, guid: c91e071af70a5024cb80f8b64e989d22, type: 3}
@@ -1064,7 +1075,7 @@ GameObject:
   - component: {fileID: 384739946}
   - component: {fileID: 384739947}
   m_Layer: 0
-  m_Name: Equipment slot head
+  m_Name: slot head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1093,14 +1104,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 384739945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d4048c18ffbe344b9a47590e6778968, type: 3}
+  m_Script: {fileID: 11500000, guid: 9246eb16a351de04284782e351e83527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  headDropdown: {fileID: 1819283260}
+  equipDropdown: {fileID: 1819283260}
   headEquipments:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 71dad1ab26ce58c408f7a545892c6763, type: 2}
+  - {fileID: 11400000, guid: 393a608429ddefe4392b10ffd1a5bfbf, type: 2}
+  - {fileID: 11400000, guid: a41cadd1f2add5f4b8dd13ed90844f03, type: 2}
 --- !u!1 &400302244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,7 +1498,7 @@ GameObject:
   - component: {fileID: 654328780}
   - component: {fileID: 654328781}
   m_Layer: 0
-  m_Name: Equipment slot torso
+  m_Name: slot armor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1516,14 +1527,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 654328779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d4048c18ffbe344b9a47590e6778968, type: 3}
+  m_Script: {fileID: 11500000, guid: c34a23113ec75764784b2ba8b580d8b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  headDropdown: {fileID: 1953076951}
-  headEquipments:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  equipDropdown: {fileID: 1953076951}
+  armorEquipments:
+  - {fileID: 11400000, guid: f9f38c3564ce7d0418240b8853d76b0f, type: 2}
+  - {fileID: 11400000, guid: 7ec85e873aab2a748b3c44edd972df52, type: 2}
+  - {fileID: 11400000, guid: b48d03db7e0c86e438769d28e465e23b, type: 2}
 --- !u!1 &672824513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,8 +1544,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 672824514}
+  - component: {fileID: 672824515}
   m_Layer: 0
-  m_Name: Equipment slot legs
+  m_Name: slot pants
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1554,6 +1566,23 @@ Transform:
   m_Father: {fileID: 9709054}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &672824515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672824513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4184ede67fa6ca14db24a2193efee31b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipDropdown: {fileID: 936529414}
+  pantsEquipments:
+  - {fileID: 11400000, guid: 0b32d8d268ebd19468c99def958ccabc, type: 2}
+  - {fileID: 11400000, guid: 916561d186a13a945ac0cd24935ebadc, type: 2}
+  - {fileID: 11400000, guid: df3c1ffc56cc98a41a69658c97ba2569, type: 2}
 --- !u!1 &716632778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,7 +1594,7 @@ GameObject:
   - component: {fileID: 716632779}
   - component: {fileID: 716632780}
   m_Layer: 0
-  m_Name: Apper arm right
+  m_Name: Upper arm right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1757,7 +1786,7 @@ GameObject:
   - component: {fileID: 741612499}
   - component: {fileID: 741612500}
   m_Layer: 0
-  m_Name: Apper arm left
+  m_Name: Upper arm left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1927,6 +1956,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &936529414 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7758670095570618289, guid: 80c86e78e30c6004d8212039bbec3aea, type: 3}
+  m_PrefabInstance: {fileID: 1532820451}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0b652f32a2cc243917e4028fa0f046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &966047125
@@ -2798,6 +2838,8 @@ MonoBehaviour:
   slots:
   - {fileID: 384739947}
   - {fileID: 654328781}
+  - {fileID: 2054996677}
+  - {fileID: 672824515}
   character: {fileID: 1782385305166031}
 --- !u!4 &1836809549
 Transform:
@@ -2979,8 +3021,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2054996676}
+  - component: {fileID: 2054996677}
   m_Layer: 0
-  m_Name: Equipment slot weapon
+  m_Name: slot weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3000,6 +3043,23 @@ Transform:
   m_Father: {fileID: 9709054}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2054996677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054996675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf0635c1f143ff46836539ca1cb26dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipDropdown: {fileID: 343446202}
+  weaponEquipments:
+  - {fileID: 11400000, guid: e1b9e6aed750a134a8c99e7305f47a60, type: 2}
+  - {fileID: 11400000, guid: 745753d06f6336b44ab932272aaa0048, type: 2}
+  - {fileID: 11400000, guid: 87b419bee1a9649408ecd8bd3e724870, type: 2}
 --- !u!1001 &2078842524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3987,9 +4047,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseCharacterStats: {fileID: 11400000, guid: 2e3a0ae29deff8e4baa8d585abd857f4, type: 2}
-  headCovering: {fileID: 0}
+  headCovering: {fileID: 837046164}
   headPlace: {fileID: 81852218}
-  faceHair: {fileID: 161762356}
+  faceHairPlace: {fileID: 161762356}
+  eyebrowPlace: {fileID: 1143476514}
   torsoPlace: {fileID: 367549109}
   upperArmRightPlace: {fileID: 716632780}
   lowerArmRightPlace: {fileID: 25598364}

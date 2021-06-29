@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: DoctorsMask
   m_EditorClassIdentifier: 
   equipmentName: Doctor's Mask
-  equipmentType: 0
   armor: 1
   strenght: 0
   agility: -1
@@ -21,3 +20,5 @@ MonoBehaviour:
   convenience: 1
   headMesh: {fileID: 0}
   headAttacjmentMesh: {fileID: 4302066, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  faceHairMesh: {fileID: 0}
+  eyebrowMesh: {fileID: 0}

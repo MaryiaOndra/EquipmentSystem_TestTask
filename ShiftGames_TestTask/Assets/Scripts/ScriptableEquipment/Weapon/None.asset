@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc9383137f21cd478b7630341aee561, type: 3}
-  m_Name: NoneHelmet
+  m_Script: {fileID: 11500000, guid: 2274fd61639f8fd48817191737e8a241, type: 3}
+  m_Name: None
   m_EditorClassIdentifier: 
   equipmentName: None
   armor: 0
@@ -18,7 +18,4 @@ MonoBehaviour:
   agility: 0
   maxSpeed: 0
   convenience: 0
-  headMesh: {fileID: 4300406, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  headAttacjmentMesh: {fileID: 0}
-  faceHairMesh: {fileID: 4301372, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  eyebrowMesh: {fileID: 4300434, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  weaponMesh: {fileID: 0}

@@ -14,7 +14,11 @@ public class Character : MonoBehaviour
     [SerializeField]
     SkinnedMeshRenderer headCovering;
     [SerializeField]
-    SkinnedMeshRenderer headPlace;
+    SkinnedMeshRenderer headPlace;   
+    [SerializeField]
+    SkinnedMeshRenderer faceHairPlace; 
+    [SerializeField]
+    SkinnedMeshRenderer eyebrowPlace;
 
     [Header("Torso")]
     [SerializeField]
@@ -51,63 +55,31 @@ public class Character : MonoBehaviour
     public int Convenience { get; private set; }
 
     public Action UpdateStatsAction;
-    public Action<Equipment> UpdateEquipmentAction;
+
+    public Action<HeadEquipment> UpdateHeadAction;
+    public Action<ArmorEquipment> UpdateArmorAction;
+    public Action<LegsEquipment> UpdatePantsAction;
+    public Action<WeaponEquipment> UpdateWeaponAction;
 
     private void Awake()
     {
-        UpdateEquipmentAction = ChangeEquipment;
+        UpdateHeadAction = ChangeHead;
+        UpdateArmorAction = ChangeTorso;
+        UpdatePantsAction = ChangePants;
+        UpdateWeaponAction = ChangeWeapon;
     }
 
-    public void ChangeEquipment(Equipment _new)
-    {
-        switch (_new.EquipmentType)
-        {
-            case EquipmentType.HEAD:
-                ChangeHelmet((HeadEquipment)_new);
-                break;
-            case EquipmentType.LEGS:
-                ChangePants(_new);
-                break;
-            case EquipmentType.TORSO:
-                ChangeArmor((TorsoEquipment)_new);
-                break;
-            case EquipmentType.WEAPON:
-                ChangeWeapon(_new);
-                break;
-        }
-
-        oldEquipment = newEquipment;
-        newEquipment = _new;
-
-        UpdateStats(oldEquipment, newEquipment);
-        UpdateStatsAction.Invoke();
-    }
-
-    void UpdateStats(Equipment _old, Equipment _new)
-    {
-        if (_old != null)
-        {
-            Armor -= _old.Armor;
-            Strenght -= _old.Strenght;
-            Agility -= _old.Agility;
-            MaxSpeed -= _old.MaxSpeed;
-            Convenience -= _old.Convenience;
-        }
-
-        Armor = baseCharacterStats.Armor + _new.Armor;
-        Strenght = baseCharacterStats.Strenght + _new.Strenght;
-        Agility = baseCharacterStats.Agility + _new.Agility;
-        MaxSpeed = baseCharacterStats.MaxSpeed + _new.MaxSpeed;
-        Convenience = baseCharacterStats.Convenience + _new.Convenience;
-    }
-
-    void ChangeHelmet(HeadEquipment _new)
+    void ChangeHead(HeadEquipment _new)
     {
         headPlace.sharedMesh = _new.HeadMesh;
         headCovering.sharedMesh = _new.HeadAttacjmentMesh;
+        faceHairPlace.sharedMesh = _new.FaceHairMesh;
+        eyebrowPlace.sharedMesh = _new.EyebrowMesh;
+
+        UpdateStats(_new);
     }
 
-    void ChangeArmor(TorsoEquipment _new)
+    void ChangeTorso(ArmorEquipment _new)
     {
         torsoPlace.sharedMesh = _new.TorsoPlace;
         upperArmRightPlace.sharedMesh = _new.UpperArmRightPlace;
@@ -116,16 +88,46 @@ public class Character : MonoBehaviour
         upperArmLeftPlace.sharedMesh = _new.UpperArmLeftPlace;
         lowerArmLeftPlace.sharedMesh = _new.UpperArmLeftPlace;
         handLeftPlace.sharedMesh = _new.HandLeftPlace;
+
+        UpdateStats(_new);
     }
 
-    void ChangePants(Equipment _new)
+    void ChangePants(LegsEquipment _new)
     {
+        hipsPlace.sharedMesh = _new.HipsMesh;
+        leftLeg.sharedMesh = _new.LeftLegMEsh;
+        rightLeg.sharedMesh = _new.RightLegMEsh;
 
+        UpdateStats(_new);
     }
 
-
-    void ChangeWeapon(Equipment _new)
+    void ChangeWeapon(WeaponEquipment _new)
     {
+        Debug.Log("CHANGE WEAPON");
 
+        UpdateStats(_new);
+    }
+
+    void UpdateStats(Equipment _new)
+    {
+        oldEquipment = newEquipment;
+        newEquipment = _new;
+
+        if (oldEquipment != null)
+        {
+            Armor -= oldEquipment.Armor;
+            Strenght -= oldEquipment.Strenght;
+            Agility -= oldEquipment.Agility;
+            MaxSpeed -= oldEquipment.MaxSpeed;
+            Convenience -= oldEquipment.Convenience;
+        }
+
+        Armor = baseCharacterStats.Armor + _new.Armor;
+        Strenght = baseCharacterStats.Strenght + _new.Strenght;
+        Agility = baseCharacterStats.Agility + _new.Agility;
+        MaxSpeed = baseCharacterStats.MaxSpeed + _new.MaxSpeed;
+        Convenience = baseCharacterStats.Convenience + _new.Convenience;
+
+        UpdateStatsAction.Invoke();
     }
 }

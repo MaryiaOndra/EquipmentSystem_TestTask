@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: NoneArmor
   m_EditorClassIdentifier: 
   equipmentName: None
-  equipmentType: 1
   armor: 0
   strenght: 0
   agility: 0
   maxSpeed: 0
   convenience: 0
   torsoPlace: {fileID: 4300480, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  upperArmRightPlace: {fileID: 0}
-  lowerArmRightPlace: {fileID: 0}
-  handRightPlace: {fileID: 0}
-  upperArmLeftPlace: {fileID: 0}
-  lowerArmLeftPlace: {fileID: 0}
-  handLeftPlace: {fileID: 0}
+  upperArmRightPlace: {fileID: 4300528, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  lowerArmRightPlace: {fileID: 4300608, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  upperArmLeftPlace: {fileID: 4300568, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  lowerArmLeftPlace: {fileID: 4300644, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  handRightPlace: {fileID: 4300682, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  handLeftPlace: {fileID: 4300718, guid: 038320a534bd8b444b43734860d1a211, type: 3}

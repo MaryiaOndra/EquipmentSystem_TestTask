@@ -25,13 +25,31 @@ public class StatsMgr : MonoBehaviour
 
     private void Awake()
     {
-        slots.ForEach(_slot => _slot.ChangeItemAction = UpdateCharacterStats);
+        slots.ForEach(_slot => _slot.ChangeHeadAction = UpdateCharacterHead);
+        slots.ForEach(_slot => _slot.ChangeArmorAction = UpdateCharacterArmor);
+        slots.ForEach(_slot => _slot.ChangePantsAction = UpdateCharacterPants);
+        slots.ForEach(_slot => _slot.ChangeWeaponAction = UpdateCharacterWeapon);
         character.UpdateStatsAction = UpdateStatsText;    
     }
 
-    void UpdateCharacterStats(Equipment _equipment) 
+    void UpdateCharacterHead(HeadEquipment _equipment) 
     {
-        character.UpdateEquipmentAction.Invoke(_equipment);
+        character.UpdateHeadAction.Invoke(_equipment);
+    }
+
+    void UpdateCharacterArmor(ArmorEquipment _equipment) 
+    {
+        character.UpdateArmorAction.Invoke(_equipment);
+    }
+
+    void UpdateCharacterWeapon(WeaponEquipment _equipment) 
+    {
+        character.UpdateWeaponAction.Invoke(_equipment);
+    }
+
+    void UpdateCharacterPants(LegsEquipment _equipment) 
+    {
+        character.UpdatePantsAction.Invoke(_equipment);
     }
 
     void UpdateStatsText() 
