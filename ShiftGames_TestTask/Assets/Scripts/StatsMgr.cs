@@ -22,21 +22,16 @@ public class StatsMgr : MonoBehaviour
 
     [SerializeField]
     Character character;
-    [SerializeField]
-    BaseCharacterStats  baseCharacterStats;
 
     private void Awake()
     {
         slots.ForEach(_slot => _slot.ChangeItemAction = UpdateCharacterStats);
-
-        character.UpdateStatsAction = UpdateStatsText;       
+        character.UpdateStatsAction = UpdateStatsText;    
     }
 
     void UpdateCharacterStats(Equipment _equipment) 
     {
-        Debug.Log("UpdateCharacterStats  "+ _equipment.EquipmentName);
         character.UpdateEquipmentAction.Invoke(_equipment);
-        character.UpdateStatsAction.Invoke();
     }
 
     void UpdateStatsText() 

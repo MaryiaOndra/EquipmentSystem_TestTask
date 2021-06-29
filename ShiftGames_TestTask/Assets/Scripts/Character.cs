@@ -5,40 +5,50 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public int Armor { get; set; }
-    public int Strenght { get; set; }
-    public int Agility { get; set; }
-    public int MaxSpeed { get; set; }
-    public int Convenience { get; set; }
-
     [SerializeField]
     BaseCharacterStats baseCharacterStats;
 
+    #region BODY_PART_PLACEMENT
     [Header("BodyParts")]
     [Header("Head")]
+    [SerializeField]
+    SkinnedMeshRenderer headCovering;
     [SerializeField]
     SkinnedMeshRenderer headPlace;
 
     [Header("Torso")]
     [SerializeField]
-    SkinnedMeshRenderer torsoPlace;   
+    SkinnedMeshRenderer torsoPlace;
     [SerializeField]
-    SkinnedMeshRenderer upperArmRightPlace;   
+    SkinnedMeshRenderer upperArmRightPlace;
     [SerializeField]
-    SkinnedMeshRenderer lowerArmRightPlace;     
+    SkinnedMeshRenderer lowerArmRightPlace;
     [SerializeField]
-    SkinnedMeshRenderer handRightPlace;      
+    SkinnedMeshRenderer handRightPlace;
     [SerializeField]
-    SkinnedMeshRenderer upperArmLeftPlace;   
+    SkinnedMeshRenderer upperArmLeftPlace;
     [SerializeField]
-    SkinnedMeshRenderer lowerArmLeftPlace;     
+    SkinnedMeshRenderer lowerArmLeftPlace;
     [SerializeField]
-    SkinnedMeshRenderer handLeftPlace;    
+    SkinnedMeshRenderer handLeftPlace;
 
     [Header("Legs")]
     [SerializeField]
     SkinnedMeshRenderer hipsPlace;
+    [SerializeField]
+    SkinnedMeshRenderer rightLeg;
+    [SerializeField]
+    SkinnedMeshRenderer leftLeg;
+    #endregion
 
+    Equipment oldEquipment;
+    Equipment newEquipment;
+
+    public int Armor { get; private set; }
+    public int Strenght { get; private set; }
+    public int Agility { get; private set; }
+    public int MaxSpeed { get; private set; }
+    public int Convenience { get; private set; }
 
     public Action UpdateStatsAction;
     public Action<Equipment> UpdateEquipmentAction;
@@ -46,12 +56,6 @@ public class Character : MonoBehaviour
     private void Awake()
     {
         UpdateEquipmentAction = ChangeEquipment;
-
-        //Armor = baseCharacterStats.Armor;
-        //Strenght = baseCharacterStats.Strenght;
-        //Agility = baseCharacterStats.Agility;
-        //MaxSpeed = baseCharacterStats.MaxSpeed;
-        //Convenience = baseCharacterStats.Convenience;
     }
 
     public void ChangeEquipment(Equipment _new)
@@ -59,30 +63,59 @@ public class Character : MonoBehaviour
         switch (_new.EquipmentType)
         {
             case EquipmentType.HEAD:
-                ChangeHelmet(_new);
+                ChangeHelmet((HeadEquipment)_new);
                 break;
             case EquipmentType.LEGS:
                 ChangePants(_new);
                 break;
             case EquipmentType.TORSO:
-                ChangeArmor(_new);
+                ChangeArmor((TorsoEquipment)_new);
                 break;
             case EquipmentType.WEAPON:
                 ChangeWeapon(_new);
                 break;
         }
 
+        oldEquipment = newEquipment;
+        newEquipment = _new;
+
+        UpdateStats(oldEquipment, newEquipment);
         UpdateStatsAction.Invoke();
     }
 
-    void ChangeHelmet(Equipment _new)
+    void UpdateStats(Equipment _old, Equipment _new)
     {
-        headPlace.sharedMesh = _new.Mesh;
+        if (_old != null)
+        {
+            Armor -= _old.Armor;
+            Strenght -= _old.Strenght;
+            Agility -= _old.Agility;
+            MaxSpeed -= _old.MaxSpeed;
+            Convenience -= _old.Convenience;
+        }
+
+        Armor = baseCharacterStats.Armor + _new.Armor;
+        Strenght = baseCharacterStats.Strenght + _new.Strenght;
+        Agility = baseCharacterStats.Agility + _new.Agility;
+        MaxSpeed = baseCharacterStats.MaxSpeed + _new.MaxSpeed;
+        Convenience = baseCharacterStats.Convenience + _new.Convenience;
     }
 
-    void ChangeArmor(Equipment _new)
+    void ChangeHelmet(HeadEquipment _new)
     {
-        torsoPlace.sharedMesh = _new.Mesh;
+        headPlace.sharedMesh = _new.HeadMesh;
+        headCovering.sharedMesh = _new.HeadAttacjmentMesh;
+    }
+
+    void ChangeArmor(TorsoEquipment _new)
+    {
+        torsoPlace.sharedMesh = _new.TorsoPlace;
+        upperArmRightPlace.sharedMesh = _new.UpperArmRightPlace;
+        lowerArmRightPlace.sharedMesh = _new.LowerArmRightPlace;
+        handRightPlace.sharedMesh = _new.HandRightPlace;
+        upperArmLeftPlace.sharedMesh = _new.UpperArmLeftPlace;
+        lowerArmLeftPlace.sharedMesh = _new.UpperArmLeftPlace;
+        handLeftPlace.sharedMesh = _new.HandLeftPlace;
     }
 
     void ChangePants(Equipment _new)

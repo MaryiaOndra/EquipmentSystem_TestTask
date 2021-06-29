@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72d4685bc3155834fabe7b4a6e6cdf7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 48736012dafdfa14896ee58e23686104, type: 3}
   m_Name: Iron Armor
   m_EditorClassIdentifier: 
   equipmentName: Iron  Armor
@@ -19,4 +19,10 @@ MonoBehaviour:
   agility: -5
   maxSpeed: -5
   convenience: 3
-  mesh: {fileID: 4300504, guid: 98a56ff2c8ee98645a4d3f79fa1506c5, type: 3}
+  torsoPlace: {fileID: 4300482, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  upperArmRightPlace: {fileID: 0}
+  lowerArmRightPlace: {fileID: 0}
+  handRightPlace: {fileID: 0}
+  upperArmLeftPlace: {fileID: 0}
+  lowerArmLeftPlace: {fileID: 0}
+  handLeftPlace: {fileID: 0}

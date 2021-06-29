@@ -1,10 +1,10 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public enum EquipmentType {HEAD, TORSO, LEGS, WEAPON }
-[CreateAssetMenu(fileName = ("NewEquipment"))]
-public class Equipment : ScriptableObject
+public abstract class Equipment : ScriptableObject
 {
     [SerializeField]
     string equipmentName;
@@ -22,11 +22,6 @@ public class Equipment : ScriptableObject
     [SerializeField]
     int convenience;
 
-    [Header("Meshes")]
-    [SerializeField]
-    Mesh mesh;
-
-    public Mesh Mesh => mesh;
     public string EquipmentName => equipmentName;
     public EquipmentType EquipmentType => equipmentType;
     public int Armor => armor;

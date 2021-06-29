@@ -39,6 +39,11 @@ public class Slot : MonoBehaviour
         headDropdown.AddOptions(newOptionsNames);
     }
 
+    private void Start()
+    {
+        OnStatsChanger(0);
+    }
+
     public void OnStatsChanger(int _value)
     {
         var _selectedName = headDropdown.options[_value].text;

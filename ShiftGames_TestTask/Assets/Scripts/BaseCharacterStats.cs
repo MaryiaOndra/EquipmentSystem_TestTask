@@ -17,14 +17,6 @@ public class BaseCharacterStats : ScriptableObject
     [SerializeField]
     int convenience;
 
-    [Header("BaseMeshes")]
-    [SerializeField]
-    Mesh head;
-    [SerializeField]
-    Mesh torso;
-    [SerializeField]
-    Mesh hips;
-
     public int Armor => armor;
     public int Strenght => strenght;
     public int Agility => agility;
