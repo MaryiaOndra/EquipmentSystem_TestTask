@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArmorSlot : Slot
 {
     [SerializeField]
-    List<ArmorEquipment> armorEquipments;
+    private List<ArmorEquipment> armorEquipments;
 
     public override void FillDropDown()
     {
@@ -20,11 +20,11 @@ public class ArmorSlot : Slot
         EquipDropdown.AddOptions(newOptionsNames);
     }
 
-    public override void OnStatsChanger(int _value)
+    public override void OnStatsChanger(int value)
     {
-        var _selectedName = EquipDropdown.options[_value].text;
-        var _newEquipment = armorEquipments.Find(_eq => _eq.EquipmentName == _selectedName);
+        string selectedName = EquipDropdown.options[value].text;
+        ArmorEquipment newEquipment = armorEquipments.Find(_eq => _eq.EquipmentName == selectedName);
 
-        ChangeArmorAction.Invoke(_newEquipment);
+        ChangeArmorAction.Invoke(newEquipment);
     }
 }

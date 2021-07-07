@@ -9,19 +9,19 @@ public class HeadEquipment : Equipment
 
     [PreviewField()]
     [SerializeField]
-    Mesh headMesh; 
+    private Mesh headMesh; 
 
     [PreviewField()]
     [SerializeField]
-    Mesh headAttacjmentMesh;  
+    private Mesh headAttacjmentMesh;  
     
     [PreviewField()]
     [SerializeField]
-    Mesh faceHairMesh;  
+    private Mesh faceHairMesh;  
     
     [PreviewField()]
     [SerializeField]
-    Mesh eyebrowMesh;
+    private Mesh eyebrowMesh;
 
     public Mesh HeadMesh  => headMesh;
     public Mesh HeadAttacjmentMesh  => headAttacjmentMesh;

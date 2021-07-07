@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6851e6f730f8ea745be15ba340ae56ff, type: 3}
-  m_Name: SimplePants
+  m_Name: IronPants
   m_EditorClassIdentifier: 
-  equipmentName: Simple Pants
-  armor: 0
-  strenght: 0
-  agility: 0
-  maxSpeed: 0
-  convenience: 0
-  hipsMesh: {fileID: 4300780, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  rightLegMesh: {fileID: 4300844, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  leftLegMesh: {fileID: 4300804, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  equipmentName: IronPants
+  _armor: 5
+  _strenght: 5
+  _agility: 0
+  _maxSpeed: -3
+  _convenience: -5
+  _hipsMesh: {fileID: 4300816, guid: 98a56ff2c8ee98645a4d3f79fa1506c5, type: 3}
+  _rightLegMesh: {fileID: 4300914, guid: 98a56ff2c8ee98645a4d3f79fa1506c5, type: 3}
+  _leftLegMesh: {fileID: 4300874, guid: 98a56ff2c8ee98645a4d3f79fa1506c5, type: 3}

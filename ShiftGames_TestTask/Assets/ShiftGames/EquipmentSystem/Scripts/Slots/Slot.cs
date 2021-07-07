@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public abstract class Slot : MonoBehaviour
 {
     [SerializeField]
-    Dropdown equipDropdown;
+    private Dropdown equipDropdown;
 
     protected Dropdown EquipDropdown => equipDropdown;
 
@@ -39,5 +39,4 @@ public abstract class Slot : MonoBehaviour
     public abstract void FillDropDown();
 
     public abstract void OnStatsChanger(int _value);
-
 }

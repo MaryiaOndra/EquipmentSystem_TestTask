@@ -8,7 +8,7 @@ public class WeaponEquipment : Equipment
 {
     [PreviewField()]
     [SerializeField]
-    Mesh weaponMesh;
+    private Mesh _weaponMesh;
 
-    public Mesh WeapomMesh => weaponMesh;
+    public Mesh WeapomMesh => _weaponMesh;
 }

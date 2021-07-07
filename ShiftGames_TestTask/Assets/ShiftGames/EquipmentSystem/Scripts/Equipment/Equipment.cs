@@ -6,28 +6,28 @@ using UnityEngine;
 public abstract class Equipment : ScriptableObject
 {
     [SerializeField]
-    string equipmentName;
+    private string equipmentName;
 
     [Header("Stats")]
     [SerializeField]
-    int armor;
+    private int _armor;
 
     [SerializeField]
-    int strenght;
+    private int _strenght;
 
     [SerializeField]
-    int agility;
+    private int _agility;
 
     [SerializeField]
-    int maxSpeed;
+    private int _maxSpeed;
 
     [SerializeField]
-    int convenience;
+    private int _convenience;
 
     public string EquipmentName => equipmentName;
-    public int Armor => armor;
-    public int Strenght => strenght;
-    public int Agility => agility;
-    public int MaxSpeed => maxSpeed;
-    public int Convenience => convenience;
+    public int Armor => _armor;
+    public int Strenght => _strenght;
+    public int Agility => _agility;
+    public int MaxSpeed => _maxSpeed;
+    public int Convenience => _convenience;
 }

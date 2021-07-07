@@ -9,17 +9,17 @@ public class LegsEquipment : Equipment
     [Header("Meshes")]
     [PreviewField()]
     [SerializeField]
-    Mesh hipsMesh;
+    private Mesh _hipsMesh;
 
     [PreviewField()]
     [SerializeField]
-    Mesh rightLegMesh;
+    private Mesh _rightLegMesh;
     
     [PreviewField()]
     [SerializeField]
-    Mesh leftLegMesh;
+    private Mesh _leftLegMesh;
 
-    public Mesh HipsMesh => hipsMesh;
-    public Mesh RightLegMEsh => rightLegMesh;
-    public Mesh LeftLegMEsh => leftLegMesh;
+    public Mesh HipsMesh => _hipsMesh;
+    public Mesh RightLegMEsh => _rightLegMesh;
+    public Mesh LeftLegMEsh => _leftLegMesh;
 }
