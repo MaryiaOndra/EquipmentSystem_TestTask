@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: LeatherArmor
   m_EditorClassIdentifier: 
   equipmentName: Leather Armor
-  armor: 4
-  strenght: 0
-  agility: -2
-  maxSpeed: -3
-  convenience: 4
-  torsoPlace: {fileID: 4301380, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  upperArmRightPlace: {fileID: 4300546, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  lowerArmRightPlace: {fileID: 4300636, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  upperArmLeftPlace: {fileID: 4300586, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  lowerArmLeftPlace: {fileID: 4300672, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  handRightPlace: {fileID: 4300682, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  handLeftPlace: {fileID: 4300718, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  _armor: 4
+  _strenght: 2
+  _agility: 0
+  _maxSpeed: -1
+  _convenience: -2
+  _torsoPlace: {fileID: 4301380, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  _upperArmRightPlace: {fileID: 4300546, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  _lowerArmRightPlace: {fileID: 4300626, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  _upperArmLeftPlace: {fileID: 4300586, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  _lowerArmLeftPlace: {fileID: 4300662, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  _handRightPlace: {fileID: 4300688, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  _handLeftPlace: {fileID: 4300724, guid: 038320a534bd8b444b43734860d1a211, type: 3}

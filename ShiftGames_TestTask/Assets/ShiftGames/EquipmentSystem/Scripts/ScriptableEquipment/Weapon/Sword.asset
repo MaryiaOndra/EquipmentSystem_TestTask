@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   equipmentName: Sword
-  armor: 2
-  strenght: 9
-  agility: -3
-  maxSpeed: -3
-  convenience: -4
-  weaponMesh: {fileID: 4300000, guid: a29e10a78af23e243949a44795e2787f, type: 3}
+  _armor: 2
+  _strenght: 9
+  _agility: -3
+  _maxSpeed: -3
+  _convenience: -4
+  _weaponMesh: {fileID: 0}

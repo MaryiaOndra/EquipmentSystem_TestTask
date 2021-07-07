@@ -12,11 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23791be40be49f3448a1fcc7d66a031e, type: 3}
   m_Name: ManCharacterStats
   m_EditorClassIdentifier: 
-  armor: 0
-  strenght: 10
-  agility: 20
-  maxSpeed: 20
-  convenience: 5
-  head: {fileID: 4300406, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  torso: {fileID: 4300478, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  hips: {fileID: 4300780, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  _armor: 0
+  _strenght: 10
+  _agility: 20
+  _maxSpeed: 20
+  _convenience: 5

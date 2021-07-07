@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Iron Armor
   m_EditorClassIdentifier: 
   equipmentName: Iron  Armor
-  armor: 10
-  strenght: 0
-  agility: -5
-  maxSpeed: -5
-  convenience: 3
-  torsoPlace: {fileID: 4300482, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  upperArmRightPlace: {fileID: 4300530, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  lowerArmRightPlace: {fileID: 4300610, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  upperArmLeftPlace: {fileID: 4300570, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  lowerArmLeftPlace: {fileID: 4300646, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  handRightPlace: {fileID: 4300682, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  handLeftPlace: {fileID: 4300718, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  _armor: 10
+  _strenght: 5
+  _agility: 3
+  _maxSpeed: -5
+  _convenience: -6
+  _torsoPlace: {fileID: 4300482, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  _upperArmRightPlace: {fileID: 4300560, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  _lowerArmRightPlace: {fileID: 4300640, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  _upperArmLeftPlace: {fileID: 4300600, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  _lowerArmLeftPlace: {fileID: 4300676, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  _handRightPlace: {fileID: 4300684, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  _handLeftPlace: {fileID: 4300724, guid: 038320a534bd8b444b43734860d1a211, type: 3}

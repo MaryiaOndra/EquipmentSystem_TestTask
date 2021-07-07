@@ -18,6 +18,6 @@ MonoBehaviour:
   _agility: 0
   _maxSpeed: -3
   _convenience: -5
-  _hipsMesh: {fileID: 4300816, guid: 98a56ff2c8ee98645a4d3f79fa1506c5, type: 3}
-  _rightLegMesh: {fileID: 4300914, guid: 98a56ff2c8ee98645a4d3f79fa1506c5, type: 3}
-  _leftLegMesh: {fileID: 4300874, guid: 98a56ff2c8ee98645a4d3f79fa1506c5, type: 3}
+  _hipsMesh: {fileID: 4300802, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  _rightLegMesh: {fileID: 4300860, guid: 038320a534bd8b444b43734860d1a211, type: 3}
+  _leftLegMesh: {fileID: 4300820, guid: 038320a534bd8b444b43734860d1a211, type: 3}

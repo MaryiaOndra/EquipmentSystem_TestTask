@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Mace
   m_EditorClassIdentifier: 
   equipmentName: Mace
-  armor: 1
-  strenght: 4
-  agility: -5
-  maxSpeed: -5
-  convenience: 4
-  weaponMesh: {fileID: 4300000, guid: bd41423b5a4d9dc4d9254b94df82aa35, type: 3}
+  _armor: 1
+  _strenght: 4
+  _agility: -5
+  _maxSpeed: -5
+  _convenience: 4
+  _weaponMesh: {fileID: 0}
