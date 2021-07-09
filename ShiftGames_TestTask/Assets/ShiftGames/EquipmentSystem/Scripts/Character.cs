@@ -69,6 +69,11 @@ public class Character : MonoBehaviour
         UpdateWeaponAction = ChangeWeapon;
     }
 
+    public void ChangeEquipment<T>(T newEquipment) 
+    {
+        Debug.Log("ChangeEquipment: " + newEquipment.GetType());    
+    }
+
     private void ChangeHead(HeadEquipment newEquip)
     {
         headPlace.sharedMesh = newEquip.HeadMesh;

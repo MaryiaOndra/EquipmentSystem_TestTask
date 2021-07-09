@@ -1,30 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeadSlot : Slot
+public class HeadSlot : Slot<HeadEquipment>
 {
     [SerializeField]
-    private List<HeadEquipment> headEquipments;
+    private List<HeadEquipment> _headEquipments;
 
-    public override void FillDropDown()
+    public override List<HeadEquipment> Equipments => _headEquipments;
+
+    protected override EquipmentType SlotType => EquipmentType.HEAD;
+
+    protected override HeadEquipment GetEquipment(string name)
     {
-        List<string> newOptionsNames = new List<string>();
-
-        for (int i = 0; i < headEquipments.Count; i++)
-        {
-            newOptionsNames.Add(headEquipments[i].EquipmentName);
-        }
-
-        EquipDropdown.ClearOptions();
-        EquipDropdown.AddOptions(newOptionsNames);
+        var selectedEqupment = _headEquipments.Find(_eq => _eq.EquipmentName == name);
+        return selectedEqupment;
     }
 
-    public override void OnStatsChanger(int value)
+    protected override string GetName(int index)
     {
-        string selectedName = EquipDropdown.options[value].text;
-        var newEquipment = headEquipments.Find(_eq => _eq.EquipmentName == selectedName);
-
-        ChangeHeadAction.Invoke(newEquipment); 
+        string name = _headEquipments[index].EquipmentName;
+        return name;
     }
 }

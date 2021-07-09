@@ -2,29 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponSlot : Slot
+public class WeaponSlot : Slot<WeaponEquipment>
 {
     [SerializeField]
-    private List<WeaponEquipment> weaponEquipments;
+    private List<WeaponEquipment> _weaponEquipments;
 
-    public override void FillDropDown()
+    public override List<WeaponEquipment> Equipments => _weaponEquipments;
+
+    protected override EquipmentType SlotType => EquipmentType.WEAPON;
+
+    protected override WeaponEquipment GetEquipment(string name)
     {
-        List<string> newOptionsNames = new List<string>();
-
-        for (int i = 0; i < weaponEquipments.Count; i++)
-        {
-            newOptionsNames.Add(weaponEquipments[i].EquipmentName);
-        }
-
-        EquipDropdown.ClearOptions();
-        EquipDropdown.AddOptions(newOptionsNames);
+        var selectedEqupment = _weaponEquipments.Find(_eq => _eq.EquipmentName == name);
+        return selectedEqupment;
     }
 
-    public override void OnStatsChanger(int value)
+    protected override string GetName(int index)
     {
-        string selectedName = EquipDropdown.options[value].text;
-        WeaponEquipment newEquipment = weaponEquipments.Find(_eq => _eq.EquipmentName == selectedName);
-
-        ChangeWeaponAction.Invoke(newEquipment);
+        string name = _weaponEquipments[index].EquipmentName;
+        return name;
     }
 }

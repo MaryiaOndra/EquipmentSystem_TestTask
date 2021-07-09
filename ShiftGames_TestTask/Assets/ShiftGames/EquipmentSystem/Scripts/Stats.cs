@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StatsMgr : MonoBehaviour
+public class Stats : MonoBehaviour
 {
     [Header("Stats")]
     [SerializeField]
@@ -17,19 +17,26 @@ public class StatsMgr : MonoBehaviour
     [SerializeField]
     private Text _convenienceStat;
 
-    [SerializeField]
-    private List<Slot> _slots;
+    //[SerializeField]
+    //private List<Slot<T>> _slots;
 
     [SerializeField]
     private Character _character;
 
     private void Awake()
     {
-        _slots.ForEach(_slot => _slot.ChangeHeadAction = UpdateCharacterHead);
-        _slots.ForEach(_slot => _slot.ChangeArmorAction = UpdateCharacterArmor);
-        _slots.ForEach(_slot => _slot.ChangePantsAction = UpdateCharacterPants);
-        _slots.ForEach(_slot => _slot.ChangeWeaponAction = UpdateCharacterWeapon);
+
+
+        //_slots.ForEach(_slot => _slot.OnHeadChanged = UpdateCharacterHead);
+        //_slots.ForEach(_slot => _slot.OnArmorChanged = UpdateCharacterArmor);
+        //_slots.ForEach(_slot => _slot.OnLegsChanged = UpdateCharacterPants);
+        //_slots.ForEach(_slot => _slot.OnWeaponChanged = UpdateCharacterWeapon);
         _character.UpdateStatsAction = UpdateStatsText;    
+    }
+
+    private void UpdateCharacterEquipment<T>(T newEquipment) 
+    {
+    
     }
 
     private void UpdateCharacterHead(HeadEquipment equipment) 
