@@ -7,11 +7,12 @@ using UnityEngine.UI;
 [Serializable]
 public abstract class Slot<T> : MonoBehaviour
 {
+    
     public abstract List<T> Equipments { get; }
     protected abstract EquipmentType SlotType { get; }
 
     private Dropdown _equipDropdown;
-    public Action<EquipmentType, string> OnEquipmentChanged;
+    public Action<T> OnEquipmentChanged;
    
     //public Action<HeadEquipment> OnHeadChanged;
     //public Action<ArmorEquipment> OnArmorChanged;
@@ -19,12 +20,12 @@ public abstract class Slot<T> : MonoBehaviour
 
     private void OnEnable()
     {
-        _equipDropdown.onValueChanged.AddListener(OnStatsChanger);
+        _equipDropdown.onValueChanged.AddListener(OnEquipmentChosen);
     }
 
     private void OnDisable()
     {
-        _equipDropdown.onValueChanged.RemoveListener(OnStatsChanger);
+        _equipDropdown.onValueChanged.RemoveListener(OnEquipmentChosen);
     }
 
     private void Awake()
@@ -35,16 +36,9 @@ public abstract class Slot<T> : MonoBehaviour
             FillDropDown();
         else
             throw new Exception("Add dropdown");
+
+
     }
-
-    //private void Start()
-    //{
-    //    OnStatsChanger(0);
-    //}
-
-    //public abstract void FillDropDown();
-
-    //public abstract void OnStatsChanger(int _value);
 
     protected abstract string GetName(int index);
     protected abstract T GetEquipment(string name);
@@ -61,12 +55,15 @@ public abstract class Slot<T> : MonoBehaviour
 
         _equipDropdown.ClearOptions();
         _equipDropdown.AddOptions(newOptionsNames);
+
+        FindObjectOfType<EquipmentController>().FillSlotList();
     }
 
-    protected void OnStatsChanger(int value)
+    protected void OnEquipmentChosen(int value)
     {
         string selectedName = _equipDropdown.options[value].text;
         T newEquipment = GetEquipment(selectedName);
-        //OnEquipmentChanged?.Invoke( selectedName);
+
+        OnEquipmentChanged?.Invoke(newEquipment);
     }
 }
